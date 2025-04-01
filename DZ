@@ -1,0 +1,41 @@
+mkdir dz
+cd dz
+git init
+echo "1" > file.txt
+git add file.txt
+git commit -m "1"
+echo "2" >> file.txt
+git add file.txt
+git commit -m "2"
+echo "3" >> file.txt
+git add file.txt
+git commit -m "3"
+echo "4" >> file.txt
+git add file.txt
+git commit -m "4"
+echo "SECRET_KEY = 'my_secret_key'" >> file.txt
+git add file.txt
+git commit -m "5 с SECRET_KEY"
+git log -S "SECRET_KEY"
+mkdir dz
+cd dz
+git init
+echo "1" > file.txt
+git add file.txt
+git commit -m "1"
+git checkout -b feature
+echo "2" >> file.txt
+git add file.txt
+git commit -m "2"
+echo "3" >> file.txt
+git add file.txt
+git commit -m "3"
+echo "4" >> file.txt
+git add file.txt
+git commit -m "4"
+echo "SECRET_KEY = 'my_secret_key'" >> file.txt
+git add file.txt
+git commit -m "5 с SECRET_KEY"
+git checkout main
+git merge --no-ff feature -m "Слияние ветки feature c файлом"
+git log --oneline --graph --all
